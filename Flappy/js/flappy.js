@@ -25,13 +25,13 @@ function parDeBarreiras(altura, abertura, x){
     this.elemento.appendChild(this.inferior.elemento)
 
     this.sortearAbertura = () => {
-        const alturaSuperior = math.random() * (altura - abertura)
+        const alturaSuperior = Math.random() * (altura - abertura)
         const alturaInferior = altura - abertura - alturaSuperior
         this.superior.setAltura(alturaSuperior)
         this.inferior.setAltura(alturaInferior)
     }
 
-    this.getX = () => parseInt(this.elemento.style.left.split('px'[0]))
+    this.getX = () => parseInt(this.elemento.style.left.split('px')[0])
     this.setX = x => this.elemento.style.left = `${x}px`
     this.getLargura = () => this.elemento.clientWidth
 
@@ -59,7 +59,7 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto){
 
             const meio = largura / 2
             const cruzouMeio = par.getX() + deslocamento >= meio
-                && par.getX()< meio
+                && par.getX() < meio
             if(cruzouMeio) notificarPonto()
         })
     }
@@ -78,11 +78,11 @@ function Passaro(alturaJogo){
     window.onkeyup = e => voando = false
 
     this. animar = () => {
-        const novoY = this.getY() + (voando ? 8 : -8)
+        const novoY = this.getY() + (voando ? 8 : -5)
         const alturaMaxima = alturaJogo - this.elemento.clientHeight
 
         if (novoY <= 0) {
-            this.setY(o)
+            this.setY(0)
         } else if (novoY >= alturaMaxima) {
             this.setY(alturaMaxima)
         } else {
