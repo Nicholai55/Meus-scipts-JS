@@ -1,2 +1,2 @@
 # Meus-scipts-JS
-Projetos de aprendisado de java script
+Projetos de aprendizado de java script
